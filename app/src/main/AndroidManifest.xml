@@ -40,7 +40,8 @@
         <activity android:name="com.example.fblogin.OnBoardActivity1" />
         <activity android:name="com.example.fblogin.OnBoardActivity2" />
         <activity android:name="com.example.fblogin.OnBoardActivity3" />
-        <activity android:name="com.example.fblogin.PreferenceActivity"></activity>
+        <activity android:name="com.example.fblogin.PreferenceActivity" />
+        <activity android:name="com.example.fblogin.HomeActivity"></activity>
     </application>
 
 </manifest>

@@ -31,13 +31,9 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         if(PrefUtils.getCurrentUser(LoginActivity.this) != null){
-
-            Intent homeIntent = new Intent(LoginActivity.this, LogoutActivity.class);
-
+            Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(homeIntent);
-
             finish();
         }
     }
