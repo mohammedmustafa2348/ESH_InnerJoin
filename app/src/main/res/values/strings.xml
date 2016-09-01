@@ -15,4 +15,5 @@
     </string>
     <string name="facebook_app_id">624388277736969</string>
     <string name="title_activity_logout">LogoutActivity</string>
+    <string name="title_activity_on_borada2">OnBoradaActivity2</string>
 </resources>

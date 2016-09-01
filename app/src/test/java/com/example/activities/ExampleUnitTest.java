@@ -1,4 +1,4 @@
-package com.example.fblogin;
+package com.example.activities;
 
 import org.junit.Test;
 

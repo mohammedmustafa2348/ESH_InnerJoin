@@ -1,9 +1,7 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
-
     defaultConfig {
         applicationId "com.example.fblogin"
         minSdkVersion 15
@@ -20,6 +18,9 @@ android {
 }
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -28,4 +29,9 @@ dependencies {
     compile 'com.android.support:design:24.2.0'
     compile 'com.facebook.android:facebook-android-sdk:4.0.0'
     compile 'com.google.code.gson:gson:2.3.1'
+    //for spotify
+    // This library handles authentication and authorization
+    compile 'com.spotify.sdk:spotify-auth-beta21-noconnect-2.18c@aar'
+    // This library handles music playback
+    compile 'com.spotify.sdk:spotify-player-beta21-noconnect-2.18c@aar'
 }

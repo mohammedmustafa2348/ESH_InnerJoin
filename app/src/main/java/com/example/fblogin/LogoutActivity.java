@@ -5,13 +5,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.activities.R;
 import com.facebook.login.LoginManager;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -28,7 +27,7 @@ public class LogoutActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout);
-        user=PrefUtils.getCurrentUser(LogoutActivity.this);
+        user= PrefUtils.getCurrentUser(LogoutActivity.this);
         profileImage= (ImageView) findViewById(R.id.profileImage);
 
         // fetching facebook's profile picture
