@@ -8,21 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.fblogin.OnBoardActivity1">
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Skip"
-        android:id="@+id/goButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="200dp"
-        android:layout_marginEnd="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    tools:context="com.example.fblogin.OnBoardActivity1"
+    android:background="@drawable/splash2">
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,14 +17,12 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Integrate with families &amp; friends!"
         android:id="@+id/textEn"
-        android:layout_above="@+id/goButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="125dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_marginTop="112dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,11 +30,29 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Integrera med familjer och vänner!"
         android:id="@+id/textSv"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="82dp"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_above="@+id/btnGo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="138dp"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:id="@+id/btnGo"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/btnNext"
+        android:layout_alignTop="@+id/btnGo"
+        android:layout_alignRight="@+id/textSv"
+        android:layout_alignEnd="@+id/textSv" />
 
 </RelativeLayout>

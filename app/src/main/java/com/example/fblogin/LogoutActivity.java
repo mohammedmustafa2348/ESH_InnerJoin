@@ -11,7 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.activities.R;
+import com.facebook.Profile;
 import com.facebook.login.LoginManager;
+import com.facebook.login.widget.ProfilePictureView;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,27 +25,28 @@ public class LogoutActivity extends Activity {
     private TextView btnLogout;
     private User user;
     private ImageView profileImage;
+    //ProfilePictureView profilePictureView;
     Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logout);
         user= PrefUtils.getCurrentUser(LogoutActivity.this);
-        profileImage= (ImageView) findViewById(R.id.profileImage);
-
+        //profilePictureView = (ProfilePictureView)findViewById(R.id.profileImage);
+        //profilePictureView.setProfileId(user.facebookID);
+        profileImage = (ImageView) findViewById(R.id.profileImage);
         // fetching facebook's profile picture
         new AsyncTask<Void,Void,Void>(){
             @Override
             protected Void doInBackground(Void... params) {
                 URL imageURL = null;
                 try {
-                    imageURL = new URL("https://graph.facebook.com/" + "1435767690067161" + "/picture?type=large");
+                    imageURL = new URL("https://graph.facebook.com/" + user.facebookID + "/picture?type=large");
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
                 try {
                     bitmap  = BitmapFactory.decodeStream(imageURL.openConnection().getInputStream());
-
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -55,7 +59,6 @@ public class LogoutActivity extends Activity {
                 profileImage.setImageBitmap(bitmap);
             }
         }.execute();
-
 
         btnLogout = (TextView) findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {

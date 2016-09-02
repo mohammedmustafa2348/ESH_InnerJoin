@@ -7,13 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.fblogin.OnBoardActivity2">
+    tools:context="com.example.fblogin.OnBoardActivity2"
+    android:background="@drawable/splash2">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SKIP"
-        android:id="@+id/goButton"
+        android:id="@+id/btnGo"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -22,23 +23,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your preferences and your interests!!"
-        android:id="@+id/textEn"
-        android:layout_above="@+id/goButton"
+        android:text="Dina önskemål och dina intressen!! "
+        android:id="@+id/textSv"
+        android:layout_above="@+id/btnGo"
         android:layout_marginBottom="88dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=" Dina önskemål och dina intressen!!"
-        android:id="@+id/textSv"
+        android:text=" Your preferences and your interests!!"
+        android:id="@+id/textEn"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -46,6 +48,16 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/btnNext"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
