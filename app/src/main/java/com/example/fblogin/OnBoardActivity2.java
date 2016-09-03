@@ -24,7 +24,7 @@ public class OnBoardActivity2 extends AppCompatActivity {
                 startActivity(nextScreen);
             }
         });
-        Button btnSkip = (Button) findViewById(R.id.btnGo);
+        Button btnSkip = (Button) findViewById(R.id.btnSkip);
         //Listening to button event
         btnSkip.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {

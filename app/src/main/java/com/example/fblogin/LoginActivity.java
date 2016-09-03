@@ -32,7 +32,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         if(PrefUtils.getCurrentUser(LoginActivity.this) != null){
-            Intent homeIntent = new Intent(LoginActivity.this, LogoutActivity.class);
+            Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(homeIntent);
             finish();
         }
@@ -103,13 +103,14 @@ public class LoginActivity extends Activity {
                                 user.email = object.getString("email").toString();
                                 user.name = object.getString("name").toString();
                                 user.gender = object.getString("gender").toString();
+                                //user.age = object.getInt("age");
                                 PrefUtils.setCurrentUser(user,LoginActivity.this);
 
                             }catch (Exception e){
                                 e.printStackTrace();
                             }
                             Toast.makeText(LoginActivity.this,"welcome "+user.name,Toast.LENGTH_LONG).show();
-                            Intent intent=new Intent(LoginActivity.this,LogoutActivity.class);
+                            Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
                             startActivity(intent);
                             finish();
 

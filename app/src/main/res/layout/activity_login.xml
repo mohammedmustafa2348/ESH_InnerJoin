@@ -1,39 +1,167 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
-    <TextView android:text="Login With Facebook"
-        android:id="@+id/btnLogin"
-        android:padding="16dp"
-        android:layout_centerInParent="true"
-        android:background="#2e6eef"
-        android:textColor="#fff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <com.facebook.login.widget.LoginButton
-        android:visibility="gone"
-        android:id="@+id/login_button"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Please register with FB or Spotify"
-        android:id="@+id/textTitle"
-        android:layout_above="@+id/btnLogin"
-        android:layout_marginBottom="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:id="@+id/linearLayout"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="center"
-        android:textSize="17dp"
-        android:textColor="#1c23aa" />
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please register with your details!"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textColor="#1161ac" />
+
+        <TextView
+            android:layout_width="370dp"
+            android:layout_height="41dp"
+            android:text="Email Id"
+            android:id="@+id/lblEmailId"
+            android:textAlignment="center"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#32ba86" />
+
+        <EditText
+            android:layout_width="327dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtEmailId"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+
+        <TextView
+            android:layout_width="370dp"
+            android:layout_height="41dp"
+            android:text="Password"
+            android:id="@+id/lblPassword"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout"
+            android:layout_marginTop="10dp"
+            android:textColor="#32ba86" />
+
+        <EditText
+            android:layout_width="327dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtPwd"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp" />
+
+        <Button
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:id="@+id/btnRegister"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="#0a6878"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:text="Login With Facebook"
+            android:id="@+id/btnFbLogin"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:background="#396ac5"
+            android:textColor="#fdfbfb" />
+
+        <Button
+            android:layout_width="297dp"
+            android:layout_height="wrap_content"
+            android:text="Login With Spotify"
+            android:id="@+id/btnSpotifyLogin"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="#3ed573"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
 </RelativeLayout>
+
+
+
+    <!--
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <TextView android:text="Login With Facebook"
+            android:id="@+id/btnLogin"
+            android:padding="16dp"
+            android:layout_centerInParent="true"
+            android:background="#2e6eef"
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.facebook.login.widget.LoginButton
+            android:visibility="gone"
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please register with FB or Spotify"
+            android:id="@+id/textTitle"
+            android:layout_above="@+id/btnLogin"
+            android:layout_marginBottom="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textAlignment="center"
+            android:textSize="17dp"
+            android:textColor="#1c23aa" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Login With Spotify  "
+            android:id="@+id/btnLoginSpotify"
+            android:layout_below="@+id/btnLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="53dp"
+            android:background="#42b142"
+            android:textColor="#fbf8f8" />
+    </RelativeLayout>
+    -->

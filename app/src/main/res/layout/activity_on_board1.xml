@@ -33,7 +33,6 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_above="@+id/btnGo"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="138dp"
         android:textColor="#ffffff" />
 
