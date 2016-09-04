@@ -10,7 +10,6 @@ import com.example.entity.User;
 public class UserDao {
     User user;
 
-
     public User getUser(String userId){
         return user;
     }

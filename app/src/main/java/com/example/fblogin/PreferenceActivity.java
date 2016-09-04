@@ -15,7 +15,7 @@ public class PreferenceActivity extends AppCompatActivity {
 
     Map<String, Integer> userPreferenceMap;
     List<ImageButton> bubbleButtonList;
-    final String[]={}
+    final String[]={"VideoGames", "Programming", "Singing"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,9 +58,13 @@ public class PreferenceActivity extends AppCompatActivity {
         final ImageButton btnFishing = (ImageButton)findViewById(R.id.btnFishing);
         final ImageButton btnESH = (ImageButton)findViewById(R.id.btnESH);
 
-        btnBubble.setOnClickListener(new View.OnClickListener() {
+        btnProgramming.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 if(!userPreferenceMap.containsKey("Programming")){
+                    if(userPreferenceMap.get("Programming") == 1){
+                        btnProgramming.setImageResource(R.drawable.programming);
+                        userPreferenceMap.put("Programming");
+                    }
                     btnBubble.setImageResource(R.drawable.programming_green);
                     userPreferenceMap.put("Programming", 1);
                 }

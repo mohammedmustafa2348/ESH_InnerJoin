@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.api.UserDao;
 import com.example.entity.User;
 import com.example.utils.PrefUtils;
 import com.facebook.CallbackManager;
@@ -102,6 +103,11 @@ public class LoginActivity extends Activity {
                                 //int age = DateUtils.getRelativeDateTimeString()
                                 //PrefUtils.setCurrentUser(user,LoginActivity.this);
                                 PrefUtils.setCurrentUser(user,LoginActivity.this);
+                                UserDao userDao = new UserDao();
+                                if(userDao.storeUser(user)){
+                                    //stored successfully
+                                }
+
                                 /**need to call function to store user data into db*/
                             }catch (Exception e){
                                 e.printStackTrace();
