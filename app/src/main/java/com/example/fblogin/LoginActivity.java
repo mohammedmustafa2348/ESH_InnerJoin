@@ -68,6 +68,7 @@ public class LoginActivity extends Activity {
                 loginButton.registerCallback(callbackManager, mCallBack);
                 loginButton.setPressed(false);
                 loginButton.invalidate();
+                loginButton.performClick();
             }
         });
     }
