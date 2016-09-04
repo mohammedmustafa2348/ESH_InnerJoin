@@ -1,5 +1,6 @@
 package com.example.fblogin;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ public class OnBoardActivity2 extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //Starting a new Intent
-                Intent nextScreen = new Intent(getApplicationContext(), OnBoardActivity3.class);
+                Intent nextScreen = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(nextScreen);
             }
         });

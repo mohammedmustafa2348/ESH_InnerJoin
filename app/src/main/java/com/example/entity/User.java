@@ -1,5 +1,6 @@
 package com.example.entity;
 
+
 /**
  * Created by Mustafa on 8/30/2016.
  */
@@ -11,6 +12,18 @@ public class User {
     private int age;
     private String location;
     private Credentials userCredentials;
+
+    public User(){}
+
+    public User(long userId, String name, String facebookID, String gender, int age, String location, Credentials userCredentials) {
+        this.userId = userId;
+        this.name = name;
+        this.facebookID = facebookID;
+        this.gender = gender;
+        this.age = age;
+        this.location = location;
+        this.userCredentials = userCredentials;
+    }
 
     public long getUserId() {
         return userId;

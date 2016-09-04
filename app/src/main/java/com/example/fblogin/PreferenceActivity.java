@@ -1,8 +1,10 @@
 package com.example.fblogin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.entity.UserPreference;
@@ -13,31 +15,31 @@ import java.util.Map;
 
 public class PreferenceActivity extends AppCompatActivity {
 
-    Map<String, Integer> userPreferenceMap;
+    static Map<String, Integer> userPreferenceMap;
     List<ImageButton> bubbleButtonList;
-    final String[]={"VideoGames", "Programming", "Singing"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
-        final ImageButton btnBubble = (ImageButton)findViewById(R.id.btnProgramming);
 
-        //Listening to button event
-        btnBubble.setOnClickListener(new View.OnClickListener() {
+        Button btnGo = (Button) findViewById(R.id.btnGo);
+        btnGo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //Starting a new Intent
-                btnBubble.setImageResource(R.drawable.programming_green);
-/*
-                Intent nextScreen = new Intent(getApplicationContext(), OnBoardActivity2.class);
+                Intent nextScreen = new Intent(getApplicationContext(), HomeActivity.class);
+                nextScreen.putExtra("userInfo", getIntent().getExtras());
                 startActivity(nextScreen);
-*/
             }
         });
+
+        //final ImageButton btnBubble = (ImageButton)findViewById(R.id.btnProgramming);
+        addBubbleListeners();
     }
 
 
 
-    private void addBubbleListener(){
+    private void addBubbleListeners(){
+        StringBuilder sb = new StringBuilder();
         final ImageButton btnVideoGames = (ImageButton)findViewById(R.id.btnVideoGames);
         final ImageButton btnProgramming = (ImageButton)findViewById(R.id.btnProgramming);
         final ImageButton btnSinging = (ImageButton)findViewById(R.id.btnSinging);
@@ -60,25 +62,64 @@ public class PreferenceActivity extends AppCompatActivity {
 
         btnProgramming.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if(!userPreferenceMap.containsKey("Programming")){
+                if(userPreferenceMap.containsKey("Programming")){
                     if(userPreferenceMap.get("Programming") == 1){
                         btnProgramming.setImageResource(R.drawable.programming);
-                        userPreferenceMap.put("Programming");
+                        userPreferenceMap.put("Programming", 0);
                     }
-                    btnBubble.setImageResource(R.drawable.programming_green);
-                    userPreferenceMap.put("Programming", 1);
+                    else{
+                        btnProgramming.setImageResource(R.drawable.programming_green);
+                        userPreferenceMap.put("Programming", 1);
+                    }
                 }
                 else{
-                    btnBubble.setImageResource(R.drawable.programming);
-                    userPreferenceMap.put("Programming", 0);
-                }()
+                    btnProgramming.setImageResource(R.drawable.programming_green);
+                    userPreferenceMap.put("Programming", 1);
+                }
+            }
+        });
 
+        btnVideoGames.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                if(userPreferenceMap.containsKey("VideoGames")){
+                    if(userPreferenceMap.get("VideoGames") == 1){
+                        btnVideoGames.setImageResource(R.drawable.videogames);
+                        userPreferenceMap.put("VideoGames", 0);
+                    }
+                    else{
+                        btnVideoGames.setImageResource(R.drawable.videogames_green);
+                        userPreferenceMap.put("VideoGames", 1);
+                    }
+                }
+                else{
+                    btnVideoGames.setImageResource(R.drawable.videogames_green);
+                    userPreferenceMap.put("VideoGames", 1);
+                }
+            }
+        });
+
+        btnSinging.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                if(userPreferenceMap.containsKey("Singing")){
+                    if(userPreferenceMap.get("Singing") == 1){
+                        btnSinging.setImageResource(R.drawable.singing);
+                        userPreferenceMap.put("Singing", 0);
+                    }
+                    else{
+                        btnSinging.setImageResource(R.drawable.singing);
+                        userPreferenceMap.put("Singing", 1);
+                    }
+                }
+                else{
+                    btnSinging.setImageResource(R.drawable.singing_green);
+                    userPreferenceMap.put("Singing", 1);
+                }
             }
         });
     }
 
 
-    public Map<String, Integer> getUserPreferenceMap() {
+    public static  Map<String, Integer> getUserPreferenceMap() {
         if (userPreferenceMap == null){
             userPreferenceMap = new HashMap<String, Integer>();
         }

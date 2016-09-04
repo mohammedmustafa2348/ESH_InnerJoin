@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.fblogin.OnBoardActivity2"
-    android:background="@drawable/splash2">
+    android:background="@drawable/ob2"
+>
 
     <Button
         android:layout_width="wrap_content"
@@ -17,7 +18,8 @@
         android:id="@+id/btnSkip"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@android:color/transparent"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -26,44 +28,14 @@
         android:id="@+id/btnNext"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="350dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Your preferences and your interests!!"
-            android:id="@+id/textEn"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="85dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Dina önskemål och dina intressen!! "
-            android:id="@+id/textSv"
-            android:layout_above="@+id/btnGo"
-            android:layout_marginBottom="88dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="#ffffff" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.api.UserDao;
+import com.example.entity.Credentials;
 import com.example.entity.User;
 import com.example.utils.PrefUtils;
 import com.facebook.CallbackManager;
@@ -20,27 +21,32 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-
 import org.json.JSONObject;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import android.provider.Settings.Secure;
 import java.util.logging.SimpleFormatter;
 
 public class LoginActivity extends Activity {
     private CallbackManager callbackManager;
     private LoginButton loginButton;
     private TextView btnLogin;
+    private Button btnregister;
     private ProgressDialog progressDialog;
     User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
         if(PrefUtils.getCurrentUser(LoginActivity.this) != null){
             Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+            homeIntent.putExtra("userName", PrefUtils.getCurrentUser(LoginActivity.this).getName());
+            homeIntent.putExtra("age", 30);
+            homeIntent.putExtra("location", PrefUtils.getCurrentUser(LoginActivity.this).getLocation());
+            homeIntent.putExtra("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum praesertim illa perdiscere ludus esset. Duo Reges: constructio interrete. Re mihi non aeque satisfacit, et quidem locis pluribus. Istic sum, inquit. Claudii libidini, qui tum erat summo ne imperio, dederetur. Satisne ergo pudori consulat, si quis sine teste libidini pareat?");
+            homeIntent.putExtra("interests", "Programming Singing Music");
+            homeIntent.putExtra("facebookId", PrefUtils.getCurrentUser(LoginActivity.this).getFacebookID());
             startActivity(homeIntent);
             finish();
         }
@@ -71,6 +77,20 @@ public class LoginActivity extends Activity {
                 loginButton.performClick();
             }
         });
+
+        btnregister = (Button)findViewById(R.id.btnRegister);
+        btnregister.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                String email = ((TextView)findViewById(R.id.txtEmailId)).getText().toString();
+                String password = ((TextView)findViewById(R.id.txtPwd)).getText().toString();
+                Credentials userCredentials = new Credentials(email, password);
+                User user = new User();
+                Intent prefIntent = new Intent(getApplicationContext(), PreferenceActivity.class);
+                startActivity(prefIntent);
+            }
+        });
+
     }
 
     @Override
@@ -100,7 +120,7 @@ public class LoginActivity extends Activity {
                                 user.getUserCredentials().setEmailId(object.getString("email").toString());
                                 user.setName(object.getString("name").toString());
                                 user.setGender(object.getString("gender").toString());
-                                Date date = new SimpleDateFormat("dd-mm-yyyy").parse(object.getString("birthday"));
+                                //Date date = new SimpleDateFormat("dd-mm-yyyy").parse(object.getString("birthday"));
                                 //int age = DateUtils.getRelativeDateTimeString()
                                 //PrefUtils.setCurrentUser(user,LoginActivity.this);
                                 PrefUtils.setCurrentUser(user,LoginActivity.this);
@@ -114,8 +134,13 @@ public class LoginActivity extends Activity {
                                 e.printStackTrace();
                             }
                             Toast.makeText(LoginActivity.this, "welcome "+user.getName(), Toast.LENGTH_LONG).show();
-                            Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
-                            startActivity(intent);
+                            Intent prefIntent=new Intent(LoginActivity.this,PreferenceActivity.class);
+                            prefIntent.putExtra("userName", PrefUtils.getCurrentUser(LoginActivity.this).getName());
+                            prefIntent.putExtra("age", 30);
+                            prefIntent.putExtra("location", PrefUtils.getCurrentUser(LoginActivity.this).getLocation());
+                            prefIntent.putExtra("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum praesertim illa perdiscere ludus esset. Duo Reges: constructio interrete. Re mihi non aeque satisfacit, et quidem locis pluribus. Istic sum, inquit. Claudii libidini, qui tum erat summo ne imperio, dederetur. Satisne ergo pudori consulat, si quis sine teste libidini pareat?");
+                            prefIntent.putExtra("interests", "Programming Singing Music");
+                            startActivity(prefIntent);
                             finish();
                         }
 
@@ -134,6 +159,10 @@ public class LoginActivity extends Activity {
         @Override
         public void onError(FacebookException e) {
             progressDialog.dismiss();
+        }
+
+        public void registerUser(){
+
         }
     };
 

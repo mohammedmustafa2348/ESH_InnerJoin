@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.fblogin.PreferenceActivity"
-    android:background="#eeebeb">
+    android:background="#3293f2">
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,9 +20,18 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textAlignment="center"
-        android:textColor="@color/com_facebook_button_background_color_pressed"
+        android:textColor="#ffffff"
         android:textSize="20dp"
         android:layout_alignParentTop="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go"
+        android:id="@+id/btnGo"
+        android:layout_below="@+id/textTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <GridLayout
         android:orientation="horizontal"
@@ -30,10 +39,9 @@
         android:layout_height="match_parent"
         android:background="#dad9d9"
         android:id="@+id/linearLayout2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textTitle"
-        android:layout_marginTop="15dp">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp">
 
         <ImageButton
             android:layout_width="100dp"
@@ -204,7 +212,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/btnDiy"
-            android:src="@drawable/DIY"
+            android:src="@drawable/diy"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:layout_row="5"

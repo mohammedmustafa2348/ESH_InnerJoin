@@ -7,6 +7,13 @@ public class Credentials {
     private String emailId;
     private String password;
 
+    public Credentials(){}
+
+    public Credentials(String emailId, String password) {
+        this.emailId = emailId;
+        this.password = password;
+    }
+
     public String getEmailId() {
         return emailId;
     }

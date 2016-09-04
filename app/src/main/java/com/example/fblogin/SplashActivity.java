@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
+import com.example.fblogin.*;
 import com.facebook.FacebookSdk;
 
 public class SplashActivity extends Activity {
