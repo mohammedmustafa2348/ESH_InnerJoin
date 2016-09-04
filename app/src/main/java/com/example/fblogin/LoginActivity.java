@@ -22,10 +22,6 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import org.json.JSONObject;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import android.provider.Settings.Secure;
-import java.util.logging.SimpleFormatter;
 
 public class LoginActivity extends Activity {
     private CallbackManager callbackManager;
@@ -59,9 +55,7 @@ public class LoginActivity extends Activity {
         callbackManager=CallbackManager.Factory.create();
         loginButton= (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions("public_profile", "email","user_friends");
-
         btnLogin= (TextView) findViewById(R.id.btnLogin);
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,20 +71,6 @@ public class LoginActivity extends Activity {
                 loginButton.performClick();
             }
         });
-
-        btnregister = (Button)findViewById(R.id.btnRegister);
-        btnregister.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                //Starting a new Intent
-                String email = ((TextView)findViewById(R.id.txtEmailId)).getText().toString();
-                String password = ((TextView)findViewById(R.id.txtPwd)).getText().toString();
-                Credentials userCredentials = new Credentials(email, password);
-                User user = new User();
-                Intent prefIntent = new Intent(getApplicationContext(), PreferenceActivity.class);
-                startActivity(prefIntent);
-            }
-        });
-
     }
 
     @Override
@@ -112,7 +92,6 @@ public class LoginActivity extends Activity {
                         public void onCompleted(
                                 JSONObject object,
                                 GraphResponse response) {
-
                             Log.e("response: ", response + "");
                             try {
                                 user = new User();
@@ -120,21 +99,17 @@ public class LoginActivity extends Activity {
                                 user.getUserCredentials().setEmailId(object.getString("email").toString());
                                 user.setName(object.getString("name").toString());
                                 user.setGender(object.getString("gender").toString());
-                                //Date date = new SimpleDateFormat("dd-mm-yyyy").parse(object.getString("birthday"));
-                                //int age = DateUtils.getRelativeDateTimeString()
-                                //PrefUtils.setCurrentUser(user,LoginActivity.this);
                                 PrefUtils.setCurrentUser(user,LoginActivity.this);
                                 UserDao userDao = new UserDao();
                                 if(userDao.storeUser(user)){
                                     //stored successfully
                                 }
-
                                 /**need to call function to store user data into db*/
                             }catch (Exception e){
                                 e.printStackTrace();
                             }
                             Toast.makeText(LoginActivity.this, "welcome "+user.getName(), Toast.LENGTH_LONG).show();
-                            Intent prefIntent=new Intent(LoginActivity.this,PreferenceActivity.class);
+                            Intent prefIntent=new Intent(LoginActivity.this, PreferenceActivity.class);
                             prefIntent.putExtra("userName", PrefUtils.getCurrentUser(LoginActivity.this).getName());
                             prefIntent.putExtra("age", 30);
                             prefIntent.putExtra("location", PrefUtils.getCurrentUser(LoginActivity.this).getLocation());

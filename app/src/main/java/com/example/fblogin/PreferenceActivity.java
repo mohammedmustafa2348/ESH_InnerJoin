@@ -26,7 +26,7 @@ public class PreferenceActivity extends AppCompatActivity {
         btnGo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 //Starting a new Intent
-                Intent nextScreen = new Intent(getApplicationContext(), HomeActivity.class);
+                Intent nextScreen = new Intent(getApplicationContext(), PreferenceActivity.class);
                 nextScreen.putExtra("userInfo", getIntent().getExtras());
                 startActivity(nextScreen);
             }

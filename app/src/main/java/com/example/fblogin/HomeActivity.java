@@ -18,7 +18,9 @@ import com.example.entity.User;
 import com.example.utils.PrefUtils;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.Map;
 
@@ -73,6 +75,19 @@ public class HomeActivity extends AppCompatActivity {
 
         btnAccept.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                try{
+                    URL url = new URL("http://10.0.0.248/LED=ON");
+                    HttpURLConnection client = (HttpURLConnection) url.openConnection();
+                }
+                catch(MalformedURLException error) {
+                    //Handles an incorrectly entered URL
+                }
+                catch(SocketTimeoutException error) {
+//Handles URL access timeout.
+                }
+                catch (IOException error) {
+//Handles input and output errors
+                }
                 btnReject.setVisibility(View.INVISIBLE);
                 btnAccept.setVisibility(View.INVISIBLE);
                 //HTTP code here
