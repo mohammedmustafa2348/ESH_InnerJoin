@@ -2,21 +2,14 @@ package com.example.fblogin;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.example.activities.*;
-import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.activities.R;
-import com.facebook.Profile;
-import com.facebook.login.LoginManager;
-import com.facebook.login.widget.ProfilePictureView;
+import com.example.entity.User;
+import com.example.utils.PrefUtils;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -36,8 +29,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_logout);
         user = PrefUtils.getCurrentUser(HomeActivity.this);
         profileImage = (ImageView) findViewById(R.id.profileImage);
+        txtProfileInfo = (TextView)findViewById(R.id.txtProfileInfo);
         //txtProfileInfo.setText(user.name+", "+user.age);
-        txtProfileInfo.setText(user.name);
+        //txtProfileInfo.setText(user.name);
 
         // fetching facebook's profile picture
         new AsyncTask<Void, Void, Void>() {
@@ -52,6 +46,8 @@ public class HomeActivity extends AppCompatActivity {
                 try {
                     bitmap = BitmapFactory.decodeStream(imageURL.openConnection().getInputStream());
                 } catch (IOException e) {
+                    e.printStackTrace();
+                }catch(Exception e){
                     e.printStackTrace();
                 }
                 return null;
@@ -81,14 +77,3 @@ public class HomeActivity extends AppCompatActivity {
     }
 }
 
-/*
-public class HomeActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
-
-    }
-}
-*/

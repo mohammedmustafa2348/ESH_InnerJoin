@@ -34,4 +34,5 @@ dependencies {
     compile 'com.spotify.sdk:spotify-auth-beta21-noconnect-2.18c@aar'
     // This library handles music playback
     compile 'com.spotify.sdk:spotify-player-beta21-noconnect-2.18c@aar'
+
 }

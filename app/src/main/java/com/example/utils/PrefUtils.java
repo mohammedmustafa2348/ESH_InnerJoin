@@ -1,9 +1,12 @@
-package com.example.fblogin;
+package com.example.utils;
 
 /**
  * Created by Mustafa on 8/30/2016.
  */
 import android.content.Context;
+
+import com.example.entity.User;
+import com.example.fblogin.ComplexPreferences;
 
 public class PrefUtils {
 

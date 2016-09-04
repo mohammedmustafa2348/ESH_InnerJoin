@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.activities">
+    package="com.example.fblogin">
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -9,48 +10,55 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.example.fblogin.DateApplication"
+        android:name=".DateApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="InnerJoin"
+        android:label="Integr"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+
         <activity
-            android:name="com.example.fblogin.LoginActivity"
-            android:label="@string/app_name"
-            >
-<!--
+            android:name=".LoginActivity"
+            android:label="@string/app_name">
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
--->
+            -->
         </activity>
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name"
+            android:label="Integer"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="com.example.fblogin.LogoutActivity"
-            android:label="@string/title_activity_logout" />
-        <activity android:name="com.example.fblogin.OnBoardActivity1" />
-        <activity android:name="com.example.fblogin.OnBoardActivity2" />
-        <activity android:name="com.example.fblogin.OnBoardActivity3" />
-        <activity android:name="com.example.fblogin.PreferenceActivity" />
-        <activity android:name="com.example.fblogin.HomeActivity" />
-        <activity android:name="com.example.fblogin.SplashActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Black.NoTitleBar"
-            android:screenOrientation="portrait">
+            android:name=".LogoutActivity"
+            android:label="Logout" />
+        <activity android:name=".OnBoardActivity1"
+            android:label="Onboarding.."/>
+        <activity android:name=".OnBoardActivity2"
+            android:label="Onboarding.."/>
+        <activity android:name=".OnBoardActivity3"
+            android:label="Onboarding.."/>
+        <activity android:name=".PreferenceActivity"
+            android:label="Preference and Interests"/>
+        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:label="Integr"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SettingsActivity"
+            android:label="Settings and Preferences"></activity>
     </application>
-
 </manifest>

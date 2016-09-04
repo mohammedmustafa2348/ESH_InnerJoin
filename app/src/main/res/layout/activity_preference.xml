@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.fblogin.PreferenceActivity">
+    tools:context="com.example.fblogin.PreferenceActivity"
+    android:background="#eeebeb">
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,149 +21,205 @@
         android:layout_alignParentStart="true"
         android:textAlignment="center"
         android:textColor="@color/com_facebook_button_background_color_pressed"
-        android:textSize="15dp"
-        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_alignParentTop="true" />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <GridLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textTitle"
-        android:layout_marginTop="45dp"
+        android:background="#dad9d9"
+        android:id="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#fdfcfc">
+        android:layout_below="@+id/textTitle"
+        android:layout_marginTop="15dp">
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vegan"
-            android:id="@+id/veganOpt"
-            android:checked="false"
-            android:textColor="#04550b" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Football"
-            android:id="@+id/footbalOpt"
-            android:layout_gravity="right"
-            android:checked="false"
-            android:textColor="#041055" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rock"
-            android:id="@+id/rockOpt"
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnProgramming"
+            android:src="@drawable/programming"
+            android:layout_marginTop="5dp"
+            android:layout_row="0"
+            android:layout_column="0" />
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnSinging"
+            android:src="@drawable/singing"
             android:layout_gravity="center_horizontal"
-            android:checked="false"
-            android:textColor="#cb3507" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vegetarian"
-            android:id="@+id/vegOpt"
-            android:checked="false"
-            android:textColor="#04550b"
-            android:capitalize="words" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sushi"
-            android:id="@+id/sushiOpt"
-            android:layout_gravity="right"
-            android:checked="false"
-            android:textColor="#cb3507" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Innebandy"
-            android:id="@+id/innebandyOpt"
-            android:checked="false"
-            android:textColor="#086166" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LGBT"
-            android:id="@+id/lgbtOpt"
+            android:layout_marginTop="5dp"
+            android:layout_row="0"
+            android:layout_column="1" />
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnVideoGames"
+            android:src="@drawable/videogames"
             android:layout_gravity="center_horizontal"
-            android:checked="false"
-            android:textColor="#041055" />
+            android:layout_marginTop="5dp"
+            android:layout_row="0"
+            android:layout_column="2" />
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cats"
-            android:id="@+id/catsOpt"
+        <ImageButton
+            android:layout_width="129dp"
+            android:layout_height="129dp"
+            android:id="@+id/btnESH"
+            android:src="@drawable/eastswedenhack"
+            android:layout_marginTop="5dp"
+            android:layout_row="1"
+            android:layout_column="1" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnWriting"
+            android:src="@drawable/writing"
             android:layout_gravity="right"
-            android:checked="false"
-            android:textColor="#ec86b0" />
+            android:layout_marginTop="5dp"
+            android:layout_row="1"
+            android:layout_column="0" />
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Christianitty"
-            android:id="@+id/christOpt"
-            android:checked="false"
-            android:textColor="#7c0572" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dogs"
-            android:id="@+id/dogsOpt"
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnMovies"
+            android:src="@drawable/movies"
             android:layout_gravity="center_horizontal"
-            android:checked="false"
-            android:textColor="#ec86b0" />
+            android:layout_marginTop="5dp"
+            android:layout_row="1"
+            android:layout_column="2" />
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Non-Vegetarian"
-            android:id="@+id/switch10"
-            android:layout_gravity="right"
-            android:checked="false"
-            android:textColor="#041055" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Athiest"
-            android:id="@+id/athiestOpt"
-            android:checked="false"
-            android:textColor="#041055" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pop"
-            android:id="@+id/popOpt"
-            android:layout_gravity="right"
-            android:checked="false"
-            android:textColor="#086166" />
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Islam"
-            android:id="@+id/islamOpt"
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnExercising"
+            android:src="@drawable/exercising"
             android:layout_gravity="center_horizontal"
-            android:checked="false"
-            android:textColor="#7c0572" />
+            android:layout_marginTop="5dp"
+            android:layout_row="2"
+            android:layout_column="0" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go"
-            android:id="@+id/btnGo"
-            android:layout_gravity="right" />
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnSports"
+            android:src="@drawable/sports"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="2"
+            android:layout_column="1" />
 
-    </LinearLayout>
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnPhotography"
+            android:src="@drawable/photography"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="2"
+            android:layout_column="2" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnAnimals"
+            android:src="@drawable/animals"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="3"
+            android:layout_column="0" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnBoardGames"
+            android:src="@drawable/boardgames"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="3"
+            android:layout_column="1" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnPottery"
+            android:src="@drawable/pottery"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="3"
+            android:layout_column="2" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnLitterature"
+            android:src="@drawable/litterature"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="4"
+            android:layout_column="0" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnYoga"
+            android:src="@drawable/yoga"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="4"
+            android:layout_column="1" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnHunting"
+            android:src="@drawable/hunting"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="4"
+            android:layout_column="2" />
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnFishing"
+            android:src="@drawable/hunting"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="5"
+            android:layout_column="2" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnDancing"
+            android:src="@drawable/dancing"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="5"
+            android:layout_column="1" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnDiy"
+            android:src="@drawable/DIY"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="5"
+            android:layout_column="1" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/btnCamping"
+            android:src="@drawable/camping"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_row="5"
+            android:layout_column="1" />
+
+    </GridLayout>
 
 </RelativeLayout>

@@ -10,10 +10,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.activities.R;
-import com.facebook.Profile;
+import com.example.entity.User;
+import com.example.utils.PrefUtils;
 import com.facebook.login.LoginManager;
-import com.facebook.login.widget.ProfilePictureView;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

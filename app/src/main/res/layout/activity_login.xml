@@ -81,10 +81,32 @@
             android:text="OR"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:textSize="20dp" />
 
+        <TextView android:text="               LOGIN WITH FACEBOOK"
+            android:id="@+id/btnLogin"
+            android:padding="16dp"
+            android:layout_centerInParent="true"
+            android:background="#2077e8"
+            android:textColor="#fff"
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp" />
+
+        <com.facebook.login.widget.LoginButton
+            android:visibility="gone"
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp" />
+
+        <!--
         <Button
             android:layout_width="295dp"
             android:layout_height="wrap_content"
@@ -95,16 +117,18 @@
             android:layout_marginLeft="40dp"
             android:background="#396ac5"
             android:textColor="#fdfbfb" />
+-->
 
-        <Button
-            android:layout_width="297dp"
+        <ImageButton
+            android:layout_width="181dp"
             android:layout_height="wrap_content"
             android:text="Login With Spotify"
             android:id="@+id/btnSpotifyLogin"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:background="#3ed573"
-            android:textColor="#ffffff" />
+            android:background="@drawable/spotify"
+            android:textColor="#ffffff"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 

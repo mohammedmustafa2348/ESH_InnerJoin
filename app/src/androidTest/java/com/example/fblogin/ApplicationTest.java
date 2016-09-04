@@ -1,4 +1,4 @@
-package com.example.activities;
+package com.example.fblogin;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

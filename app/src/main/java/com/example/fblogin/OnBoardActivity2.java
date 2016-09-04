@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.activities.R;
-
 public class OnBoardActivity2 extends AppCompatActivity {
 
     @Override
